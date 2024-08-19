@@ -2,4 +2,5 @@
 
 [vue3基础——模版语法1---指令.md](模版语法1---指令.md)  
 [vue3基础——模版语法2--列表渲染](模版语法2--列表渲染.md)  
-[vue3基础——OptionAPI](OptionAPI.md)
+[vue3基础——OptionAPI](OptionAPI.md)  
+[vue3基础——组件](组件化基础--组件通信.md)  

@@ -22,7 +22,8 @@ permalink: /
 ### vue3学习笔记
 [vue3基础——模版语法1---指令.md](/vue3学习笔记/模版语法1---指令.md)  
 [vue3基础——模版语法2--列表渲染](/vue3学习笔记/模版语法2--列表渲染.md)  
-[vue3基础——OptionAPI](/vue3学习笔记/OptionAPI.md)
+[vue3基础——OptionAPI](/vue3学习笔记/OptionAPI.md)  
+[vue3基础——组件通信](/vue3学习笔记/组件化基础--组件通信.md) 
 
 ### 相关工具的使用
 
