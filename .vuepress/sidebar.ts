@@ -7,7 +7,7 @@ import frameVueSideBar from "./sidebars/frameVueSideBar";
 // @ts-ignore
 export default {
     "/前端基础知识/": basicKnowledgeSideBar,
-    "/vue3学习笔记/": frameVueSideBar,
+    "/vue3笔记/": frameVueSideBar,
     "/工具用法/": toolUsageSideBar,
     // 降级，默认根据文章标题渲染侧边栏
     "/": "auto",

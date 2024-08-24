@@ -14,8 +14,8 @@ export default [
         ]
     },
     {
-        text: "vue3学习笔记",
-        link: '/vue3学习笔记/'
+        text: "vue3笔记",
+        link: '/vue3笔记/'
     },
     {
         text: "工具用法",
