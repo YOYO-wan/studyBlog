@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>组件化基础--混入Mixin | YOYO-wan</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/studyBlog/favicon.ico">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?2675818a983a3131404cee835018f016";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    <meta name="description" content="YOYO-wan的文档">
+    <meta property="article:modified_time" content="2024-08-31T16:15:06.000Z">
+    <meta property="og:site_name" content="YOYO-wan">
+    <meta property="og:title" content="组件化基础--混入Mixin">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://codefather.cn/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%9F%BA%E7%A1%80-%E6%B7%B7%E5%85%A5mixin/">
+    <meta name="twitter:title" content="组件化基础--混入Mixin">
+    <meta name="twitter:url" content="https://codefather.cn/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%9F%BA%E7%A1%80-%E6%B7%B7%E5%85%A5mixin/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="程序员, 编程, 前端工程师">
+    <meta property="article:tag" content="程序员">
+    <meta name="keywords" content="YOYO-wan, 前端开发, 学习笔记">
+    
+    <link rel="preload" href="/studyBlog/assets/css/0.styles.2821be0a.css" as="style"><link rel="preload" href="/studyBlog/assets/js/app.537e7cbc.js" as="script"><link rel="preload" href="/studyBlog/assets/js/2.7972a5f4.js" as="script"><link rel="preload" href="/studyBlog/assets/js/36.f03aa3c8.js" as="script"><link rel="prefetch" href="/studyBlog/assets/js/1.e02c4800.js"><link rel="prefetch" href="/studyBlog/assets/js/10.941bbf9b.js"><link rel="prefetch" href="/studyBlog/assets/js/11.77e3e32b.js"><link rel="prefetch" href="/studyBlog/assets/js/12.91b302c8.js"><link rel="prefetch" href="/studyBlog/assets/js/13.37c9bdd6.js"><link rel="prefetch" href="/studyBlog/assets/js/14.da5d1427.js"><link rel="prefetch" href="/studyBlog/assets/js/15.aca8501f.js"><link rel="prefetch" href="/studyBlog/assets/js/16.299af924.js"><link rel="prefetch" href="/studyBlog/assets/js/17.9adaa1d6.js"><link rel="prefetch" href="/studyBlog/assets/js/18.9bb0c36b.js"><link rel="prefetch" href="/studyBlog/assets/js/19.5664daa3.js"><link rel="prefetch" href="/studyBlog/assets/js/20.e934be12.js"><link rel="prefetch" href="/studyBlog/assets/js/21.cad2c088.js"><link rel="prefetch" href="/studyBlog/assets/js/22.cae44f5b.js"><link rel="prefetch" href="/studyBlog/assets/js/23.5145b9b7.js"><link rel="prefetch" href="/studyBlog/assets/js/24.2abe4514.js"><link rel="prefetch" href="/studyBlog/assets/js/25.4c251aca.js"><link rel="prefetch" href="/studyBlog/assets/js/26.30ad7981.js"><link rel="prefetch" href="/studyBlog/assets/js/27.8109d2ee.js"><link rel="prefetch" href="/studyBlog/assets/js/28.8a601e90.js"><link rel="prefetch" href="/studyBlog/assets/js/29.5490c833.js"><link rel="prefetch" href="/studyBlog/assets/js/3.f16f9e83.js"><link rel="prefetch" href="/studyBlog/assets/js/30.84e39d7d.js"><link rel="prefetch" href="/studyBlog/assets/js/31.dd50bd66.js"><link rel="prefetch" href="/studyBlog/assets/js/32.96a8382a.js"><link rel="prefetch" href="/studyBlog/assets/js/33.656c304a.js"><link rel="prefetch" href="/studyBlog/assets/js/34.da5b0b35.js"><link rel="prefetch" href="/studyBlog/assets/js/35.c7c7a89f.js"><link rel="prefetch" href="/studyBlog/assets/js/37.58be38a7.js"><link rel="prefetch" href="/studyBlog/assets/js/38.5cc2725a.js"><link rel="prefetch" href="/studyBlog/assets/js/39.b83ae5be.js"><link rel="prefetch" href="/studyBlog/assets/js/4.5651c35c.js"><link rel="prefetch" href="/studyBlog/assets/js/40.4a28ef6e.js"><link rel="prefetch" href="/studyBlog/assets/js/41.4eff4b98.js"><link rel="prefetch" href="/studyBlog/assets/js/42.f4b6dad0.js"><link rel="prefetch" href="/studyBlog/assets/js/43.67d94ebf.js"><link rel="prefetch" href="/studyBlog/assets/js/44.2832bf6f.js"><link rel="prefetch" href="/studyBlog/assets/js/45.499a3eb5.js"><link rel="prefetch" href="/studyBlog/assets/js/46.2fabb147.js"><link rel="prefetch" href="/studyBlog/assets/js/47.d1ef9ecc.js"><link rel="prefetch" href="/studyBlog/assets/js/48.b98f5dc1.js"><link rel="prefetch" href="/studyBlog/assets/js/5.f848e6f4.js"><link rel="prefetch" href="/studyBlog/assets/js/6.ec431008.js"><link rel="prefetch" href="/studyBlog/assets/js/7.2aed87eb.js"><link rel="prefetch" href="/studyBlog/assets/js/vendors~docsearch.0115b510.js">
+    <link rel="stylesheet" href="/studyBlog/assets/css/0.styles.2821be0a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/studyBlog/" class="home-link router-link-active"><img src="/studyBlog/logo.png" alt="YOYO-wan" class="logo"> <span class="site-name can-hide">YOYO-wan</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础知识" class="dropdown-title"><span class="title">前端基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础知识" class="mobile-dropdown-title"><span class="title">前端基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#前端工程化" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#javascript" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/studyBlog/vue3笔记/" class="nav-link">
+  vue3笔记
+</a></div><div class="nav-item"><a href="/studyBlog/工具用法/" class="nav-link">
+  工具用法
+</a></div> <a href="https://github.com/YOYO-wan" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础知识" class="dropdown-title"><span class="title">前端基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础知识" class="mobile-dropdown-title"><span class="title">前端基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#前端工程化" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#javascript" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/studyBlog/vue3笔记/" class="nav-link">
+  vue3笔记
+</a></div><div class="nav-item"><a href="/studyBlog/工具用法/" class="nav-link">
+  工具用法
+</a></div> <a href="https://github.com/YOYO-wan" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/studyBlog/vue3%E7%AC%94%E8%AE%B0/" class="sidebar-link">vue3笔记</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>vue3笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/studyBlog/%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%951-%E6%8C%87%E4%BB%A4/" class="sidebar-link">模版语法1--指令</a></li><li><a href="/studyBlog/%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%952-%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93/" class="sidebar-link">模版语法2--列表渲染</a></li><li><a href="/studyBlog/%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%953-%E8%A1%A8%E5%8D%95/" class="sidebar-link">模版语法3--表单</a></li><li><a href="/studyBlog/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-optionapi/" class="sidebar-link">语法基础--OptionAPI</a></li><li><a href="/studyBlog/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%9F%BA%E7%A1%80-%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" class="sidebar-link">组件化基础--组件通信</a></li><li><a href="/studyBlog/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%9F%BA%E7%A1%80-%E6%8F%92%E6%A7%BD/" class="sidebar-link">组件化基础--插槽</a></li><li><a href="/studyBlog/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%9F%BA%E7%A1%80-%E6%B7%B7%E5%85%A5mixin/" aria-current="page" class="active sidebar-link">组件化基础--混入Mixin</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/studyBlog/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%9F%BA%E7%A1%80-%E6%B7%B7%E5%85%A5mixin/#基本使用" class="sidebar-link">基本使用</a></li><li class="sidebar-sub-header"><a href="/studyBlog/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%9F%BA%E7%A1%80-%E6%B7%B7%E5%85%A5mixin/#mixin的合并规则" class="sidebar-link">Mixin的合并规则</a></li></ul></li><li><a href="/studyBlog/vue%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E6%AD%A5%E9%AA%A4/" class="sidebar-link">vue创建项目步骤</a></li><li><a href="/studyBlog/webpack%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%86%E5%8C%85/" class="sidebar-link">webpack的代码分包</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="content"><div style="width:100%"><div class="theme-default-content custom-content content__default"><h1 id="组件化基础-混入mixin"><a href="#组件化基础-混入mixin" class="header-anchor">#</a> 组件化基础--混入Mixin</h1> <p>在开发中，组件和组件之间有时候会存在相同的代码逻辑，会希望对相同的代码逻辑进行抽取<br>
+Vue2和Vue3中都支持的一种方式是使用Mixin完成<br>
+Mixin提供了一种非常灵活的方式，来分发Vue组件中的可复用的功能<br>
+一个Mixin对象可以包含任何组件选项<br>
+当组件使用Mixin对象时，所有Mixin对象的选项将被混合进入该组件本身的选项中</p> <h2 id="基本使用"><a href="#基本使用" class="header-anchor">#</a> 基本使用</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 以下为sayHello.js文件中代码</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">message</span><span class="token operator">:</span><span class="token string">'测试'</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">methods</span><span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Hello Mixin'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 组件引入sayHello.js文件</span>
+<span class="token keyword">import</span> sayHelloMixin <span class="token keyword">from</span> <span class="token string">'./view/Mixin/sayHello.js'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">mixins</span><span class="token operator">:</span><span class="token punctuation">[</span>sayHelloMixin<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">// 会输出'Hello Mixin'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>message<span class="token punctuation">)</span>  <span class="token comment">// 输出’测试‘</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h2 id="mixin的合并规则"><a href="#mixin的合并规则" class="header-anchor">#</a> Mixin的合并规则</h2> <p>如果Mixin对象中的选项和组件对象中的选项发生冲突，Vue会如何执行</p> <h3 id="情况一-data返回对象中属性名冲突"><a href="#情况一-data返回对象中属性名冲突" class="header-anchor">#</a> 情况一:data返回对象中属性名冲突</h3> <p>data返回值对象默认情况下会进行合并，如果data返回对象中属性名冲突，会保留组件自身的数据<br>
+例如，组件和mixin中的data对象中都存在了title数据变量，title将返回组件中定义的值</p> <h3 id="情况二-都含有对象选项-methods-components-directives"><a href="#情况二-都含有对象选项-methods-components-directives" class="header-anchor">#</a> 情况二:都含有对象选项(methods,components,directives)</h3> <p>mixin和组件中都存在methods选项，且其中都定义了方法，它们会被合并，都会生效<br>
+如果对象的key相同，比如：mixin和组件的methods选项中都含有handleBtnClick的这个方法<br>
+那么组件中methods选项中的handleBtnClick会生效</p> <blockquote><p>Mixin 钩子的调用顺序与提供它们的选项顺序相同，且会在组件自身的钩子前被调用。</p></blockquote></div> <footer class="page-edit" style="margin:0;"><!----> <div class="last-updated"><span class="prefix">最近更新:</span> <span class="time">8/31/2024, 4:15:06 PM</span></div></footer> <!----></div> <div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:86vh"><div style="font-weight:bold;">组件化基础--混入Mixin</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/studyBlog/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%9F%BA%E7%A1%80-%E6%B7%B7%E5%85%A5mixin/#基本使用" class="toc-sidebar-link">基本使用</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/studyBlog/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%9F%BA%E7%A1%80-%E6%B7%B7%E5%85%A5mixin/#mixin的合并规则" class="toc-sidebar-link">Mixin的合并规则</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/studyBlog/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%9F%BA%E7%A1%80-%E6%B7%B7%E5%85%A5mixin/#情况一-data返回对象中属性名冲突" class="toc-sidebar-link">情况一:data返回对象中属性名冲突</a></li><li class="toc-sidebar-sub-header"><a href="/studyBlog/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%9F%BA%E7%A1%80-%E6%B7%B7%E5%85%A5mixin/#情况二-都含有对象选项-methods-components-directives" class="toc-sidebar-link">情况二:都含有对象选项(methods,components,directives)</a></li></ul></li></ul></div></div></div></div></div>  <main class="footer"> <div class="copy-right"><span class="name"> 编程导航   |     </span> <a target="_blank" rel="noreferrer">
+          
+        </a></div></main></main> <aside class="page-sidebar"> <div class="page-side-toolbar"></div>  </aside></div><div class="global-ui"><!----></div></div>
+    <script src="/studyBlog/assets/js/app.537e7cbc.js" defer></script><script src="/studyBlog/assets/js/2.7972a5f4.js" defer></script><script src="/studyBlog/assets/js/36.f03aa3c8.js" defer></script>
+  </body>
+</html>
