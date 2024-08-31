@@ -11,6 +11,7 @@ export default [
             "组件化基础--组件通信.md",
             "组件化基础--插槽.md",
             "vue创建项目步骤.md",
+            "webpack的代码分包.md",
         ],
     }
   ];

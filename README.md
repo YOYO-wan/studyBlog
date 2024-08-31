@@ -23,6 +23,10 @@ permalink: /
 
 [vue3基础——插槽](/vue3笔记/组件化基础--插槽.md)  
 
+[vue3项目——vue创建项目步骤](/vue3笔记/vue创建项目步骤.md)  
+
+[vue3项目——webpack的代码分包](/vue3笔记/webpack的代码分包.md)  
+
 ### 前端基础知识分类
 [前端工程化---JavaScript模块开发](/前端基础知识/前端工程化/JavaScript模块开发.md)
 
