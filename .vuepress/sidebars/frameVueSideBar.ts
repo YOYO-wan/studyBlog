@@ -10,6 +10,7 @@ export default [
             "语法基础--OptionAPI.md",
             "组件化基础--组件通信.md",
             "组件化基础--插槽.md",
+            "组件化基础--混入Mixin.md",
             "vue创建项目步骤.md",
             "webpack的代码分包.md",
         ],

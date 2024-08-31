@@ -23,6 +23,8 @@ permalink: /
 
 [vue3基础——插槽](/vue3笔记/组件化基础--插槽.md)  
 
+[vue3基础——混入Mixin](/vue3笔记/组件化基础--混入Mixin.md)  
+
 [vue3项目——vue创建项目步骤](/vue3笔记/vue创建项目步骤.md)  
 
 [vue3项目——webpack的代码分包](/vue3笔记/webpack的代码分包.md)  
