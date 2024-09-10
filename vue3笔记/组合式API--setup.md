@@ -68,3 +68,97 @@ export default {
 }
 </script>
 ```
+## setup中的生命周期钩子
+![setup中的生命周期钩子](./public/setup-LifecycleHooks.png)
+|  选项式API   | setup生命周期钩子  |  描述  |
+|  ----  | ----  | ----  |
+| beforeCreate  | x | x |
+| created  | x | x |
+| beforeMount  | onBeforeMount | 在组件挂载之前调用 |
+| mounted  | onMounted | 在组件挂载完成后调用 |
+| beforeUpdate  | onBeforeUpdate | 数据更新前调用 |
+| updated  | onUpdated | 数据更新之后调用 |
+| beforeUnmount  | onBeforeUnmount | 组件实例卸载前调用 |
+| unmounted  | onUnmounted | 组件实例卸载后调用 |
+| activated  | onActivated | \<keepAlive\>被插入到DOM中时调用 |
+| deactivated  | onDeactivated | \<keepAlive\>被移除时调用 |
+
+## setup语法糖
+\<script setup\>是在单文件组件(SFC)中使用组合式API的编译时语法糖  
+当同时使用SFC与组合式API时则推荐使用该语法糖  
+``` vue
+<script setup>
+const message = "HelloWorld"
+function changeMessage(){
+    message = "Hello"
+}
+</script>
+```
+里面的代码会被编译成组件setup函数内容，\<script setup\>中的代码会在每次组件实例被创建的时候执行  
+### 顶层的绑定会被暴露给模版  
+当使用\<script setup\>的时候，任何在\<script setup\>声明的顶层绑定(包括变量，函数声明，以及import导入的内容)都能在模板中直接使用  
+```vue
+<template>
+    <div>
+        <h2>message:{{ message }}</h2>
+        <button @clicl="btnClick">点击按钮</button>
+        <show-info></show-info>
+    </div>
+</template>
+<script setup>
+    import { ref } from "vue";
+    import showInfo from "../pages/showInfo.vue";
+    const message = ref("HelloWorld")
+    function btnClick(){
+        console.log("btnClick")
+    }
+</script>
+```
+
+### defineProps()
+setup语法糖中定义prpps
+```vue
+<template>
+    <div>
+        在showInfo组件中
+        {{name}}-{{age}}
+    </div>
+</template>
+<script setup>
+    const props = defineProps({
+        name:{
+            type: String,
+            default: ""
+        },
+        age:{
+            type:Number,
+            default: 10
+        }
+    })
+</script>
+```
+
+### defineEmits()
+setup语法糖中定义emit事件
+```vue
+<script setup>
+    const emits = defineEmits(['btnClick'])
+    emits("btnClick",{value:"测试"})
+</script>
+```
+
+### defineExpose()
+使用\<script setup\>的组件是默认关闭的  
+通过模板ref或$parent获取到的组件的公开实例，不会暴露任何在\<script setup\>中声明的绑定  
+所以需要子组件通过defineExpose()去暴露property  
+```js
+// showInfo组件内
+function foo (){
+    console.log("foo")
+}
+defineExpose({ foo })
+
+// 父组件中
+const showInfoRef = ref(null)
+showInfoRef.value.foo()
+```
