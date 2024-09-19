@@ -14,6 +14,7 @@ export default [
             "组合式API--setup",
             "组合式API--声明响应式以及工具函数",
             "组合式API--其他响应式函数",
+            "vueRouter--基础使用",
             "vue创建项目步骤.md",
             "webpack的代码分包.md",
         ],

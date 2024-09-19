@@ -22,6 +22,11 @@
 [CompositionAPI——声明响应式以及工具函数](组合式API--声明响应式以及工具函数.md)
 
 [CompositionAPI——其他响应式函数](组合式API--其他响应式函数.md)
+
+## vue-router
+
+[vueRouter——基础使用](vueRouter--基础使用.md)  
+
 ## vue3项目
 
 [vue创建项目步骤](vue创建项目步骤.md)  
