@@ -4,10 +4,8 @@
 hash模式是通过监听url中的hash值，来实现路由切换和组件渲染的  
 URL的hash也就是锚点(#)，本质上是改变window.location的href的属性  
 我们可以通过直接赋值windows.location.hash来改变href，但页面不发生刷新  
-#### hash的优势
-兼容性更好，老版IE中可以运行  
-#### hash的缺陷  
-URL中有一个#，显得不像真实路径  
+**hash的优势：** 兼容性更好，老版IE中可以运行  
+**hash的缺陷：** URL中有一个#，显得不像真实路径  
 ### History模式
 History模式主要依赖于HTML5新增的historyAPI  
 它有6种方法改变URL而不刷新页面  
@@ -150,4 +148,3 @@ import函数返回就是一个Promise
 > `import(/*webpackChunkName:"about"*/'../view/about.vue')`
 ## 动态路由基本匹配 
 ### 路由params传参
-测试

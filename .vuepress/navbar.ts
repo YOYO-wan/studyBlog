@@ -21,4 +21,8 @@ export default [
         text: "工具用法",
         link: '/工具用法/'
     },
+    {
+        text: "面试",
+        link: '/面试/'
+    },
 ] as NavItem[];
