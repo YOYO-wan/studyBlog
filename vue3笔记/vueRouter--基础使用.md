@@ -150,3 +150,4 @@ import函数返回就是一个Promise
 > `import(/*webpackChunkName:"about"*/'../view/about.vue')`
 ## 动态路由基本匹配 
 ### 路由params传参
+测试
