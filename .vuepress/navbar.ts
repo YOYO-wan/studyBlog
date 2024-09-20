@@ -6,11 +6,15 @@ export default [
         link: '/前端基础知识/',
         items: [
             {
-                text: "前端工程化", link: "/前端基础知识/#前端工程化",
+                text: "HTML和CSS", link: "/前端基础知识/#HTML和CSS",
             },
             {
                 text: "JavaScript", link: "/前端基础知识/#javascript",
             },
+            {
+                text: "前端工程化", link: "/前端基础知识/#前端工程化",
+            },
+            
         ]
     },
     {
