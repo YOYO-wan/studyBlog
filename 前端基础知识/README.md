@@ -6,7 +6,9 @@
 
 ## JavaScript
 
-[测试](JavaScript/测试.md)
+[测试](JavaScript/测试.md)  
+
+[this的指向问题](JavaScript/this的指向问题.md)  
 
 ## 前端工程化
 

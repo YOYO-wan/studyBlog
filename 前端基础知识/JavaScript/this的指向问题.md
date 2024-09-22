@@ -1,0 +1,85 @@
+# this的指向问题
+this是什么？this是函数作为方法被调用时所指向的对象  
+this的绑定和调用的方式以及调用的位置有关系，this是在运行的时候被绑定的  
+## this的绑定规则
+### 绑定规则一：默认绑定
+独立函数调用下使用默认绑定  
+独立函数调用可以理解为：函数没被绑定到某个对象上进行调用  
+**情况一：普通函数被独立执行**
+``` js
+function foo (){
+    console.log("foo函数的this指向:",this)
+}
+foo() // this指向windows
+```
+**情况二：函数定义在对象中，但独立调用**
+``` js
+var obj = {
+    name:"哈哈",
+    age: 18,
+    bar: function(){
+        console.log("this指向:",this)
+    }
+}
+var foo = obj.bar
+foo() // this指向windows
+```
+**情况三：严格模式下，独立调用下的函数中的this指向undefined**
+``` js
+'use strict'
+function foo (){
+    console.log("this指向:",this)
+}
+foo()
+```
+### 绑定规则二：隐式绑定
+隐式绑定就是通过某个对象发起的函数调用  
+``` js
+function foo (){
+    console.log("this指向:",this)
+}
+var obj = {
+    name:"哈哈",
+    age: 18,
+    bar: foo
+}
+obj.bar() // this指向obj
+```
+### 绑定规则三：显式绑定
+使用了方法，明确绑定了this指向的对象，称之为显式绑定  
+JavaScript中call(),apply(),bind()可以绑定this指向的对象  
+```js
+function foo(name,age){
+    console.log("this指向:",this)
+}
+var obj = {
+    name: "哈哈哈"
+}
+foo.call(obj,"yoyo",18) // this指向obj
+foo.apply(obj,["yoyo",18]) // this指向obj
+var p = foo.bind(obj,"yoyo",18)
+p() // this指向obj
+```
+> call(),apply(),bind()三种方法的区别  
+> call(),apply()都可以直接调用函数,但该两种方法的第二个传参不同  
+> call()的第二个参数以多参数的形式传递，apply()的第二个参数以数组的方式传递  
+> 例如：`foo.call(obj,18)`,`foo.apply(obj,[18])`
+> bind()方法执行后不调用函数，返回一个绑定了新this的函数  
+> `var bar = foo.bind(obj)`
+> `bar()`
+
+### 绑定规则四：new绑定
+使用new关键字来调用函数  
+``` js
+function person (name){
+    console.log("this指向:",this)
+    this.name = name
+}
+new person("哈哈") // this指向person这个对象
+```
+使用new时会有如下执行：
+1. 创建了一个叫做person的空对象  
+2. 将this指向了person这个空对象  
+3. 执行person函数中的代码  
+4. 如果该函数没有返回值，会默认返回person对象
+所以`var foo = new person("哈哈")`,foo为person对象
