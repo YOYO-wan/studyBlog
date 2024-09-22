@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript相关面试题 | YOYO-wan</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/studyBlog/favicon.ico">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?2675818a983a3131404cee835018f016";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    <meta name="description" content="YOYO-wan的文档">
+    <meta property="article:modified_time" content="2024-09-22T19:12:57.000Z">
+    <meta property="og:site_name" content="YOYO-wan">
+    <meta property="og:title" content="JavaScript相关面试题">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://codefather.cn/javascript%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/">
+    <meta name="twitter:title" content="JavaScript相关面试题">
+    <meta name="twitter:url" content="https://codefather.cn/javascript%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="程序员, 编程, 前端工程师">
+    <meta property="article:tag" content="程序员">
+    <meta name="keywords" content="YOYO-wan, 前端开发, 学习笔记">
+    
+    <link rel="preload" href="/studyBlog/assets/css/0.styles.2821be0a.css" as="style"><link rel="preload" href="/studyBlog/assets/js/app.19c0c77f.js" as="script"><link rel="preload" href="/studyBlog/assets/js/2.c08ae4f7.js" as="script"><link rel="preload" href="/studyBlog/assets/js/56.c55e9a54.js" as="script"><link rel="prefetch" href="/studyBlog/assets/js/1.53020860.js"><link rel="prefetch" href="/studyBlog/assets/js/10.478a05fc.js"><link rel="prefetch" href="/studyBlog/assets/js/11.77e3e32b.js"><link rel="prefetch" href="/studyBlog/assets/js/12.91b302c8.js"><link rel="prefetch" href="/studyBlog/assets/js/13.37c9bdd6.js"><link rel="prefetch" href="/studyBlog/assets/js/14.da5d1427.js"><link rel="prefetch" href="/studyBlog/assets/js/15.eda1adf0.js"><link rel="prefetch" href="/studyBlog/assets/js/16.299af924.js"><link rel="prefetch" href="/studyBlog/assets/js/17.9adaa1d6.js"><link rel="prefetch" href="/studyBlog/assets/js/18.9bb0c36b.js"><link rel="prefetch" href="/studyBlog/assets/js/19.5664daa3.js"><link rel="prefetch" href="/studyBlog/assets/js/20.e934be12.js"><link rel="prefetch" href="/studyBlog/assets/js/21.9c120ec4.js"><link rel="prefetch" href="/studyBlog/assets/js/22.cae44f5b.js"><link rel="prefetch" href="/studyBlog/assets/js/23.5145b9b7.js"><link rel="prefetch" href="/studyBlog/assets/js/24.2abe4514.js"><link rel="prefetch" href="/studyBlog/assets/js/25.4c251aca.js"><link rel="prefetch" href="/studyBlog/assets/js/26.30ad7981.js"><link rel="prefetch" href="/studyBlog/assets/js/27.60d8159c.js"><link rel="prefetch" href="/studyBlog/assets/js/28.8a601e90.js"><link rel="prefetch" href="/studyBlog/assets/js/29.a67e4486.js"><link rel="prefetch" href="/studyBlog/assets/js/3.f16f9e83.js"><link rel="prefetch" href="/studyBlog/assets/js/30.9dab4ac8.js"><link rel="prefetch" href="/studyBlog/assets/js/31.ef7e4590.js"><link rel="prefetch" href="/studyBlog/assets/js/32.de90a5c0.js"><link rel="prefetch" href="/studyBlog/assets/js/33.62910ba7.js"><link rel="prefetch" href="/studyBlog/assets/js/34.c8040847.js"><link rel="prefetch" href="/studyBlog/assets/js/35.1c32cc10.js"><link rel="prefetch" href="/studyBlog/assets/js/36.671a35f0.js"><link rel="prefetch" href="/studyBlog/assets/js/37.f3093847.js"><link rel="prefetch" href="/studyBlog/assets/js/38.ba7ee047.js"><link rel="prefetch" href="/studyBlog/assets/js/39.8e8c1f64.js"><link rel="prefetch" href="/studyBlog/assets/js/4.b3a5ad11.js"><link rel="prefetch" href="/studyBlog/assets/js/40.6a3306a3.js"><link rel="prefetch" href="/studyBlog/assets/js/41.1b2e2c84.js"><link rel="prefetch" href="/studyBlog/assets/js/42.5c0e0a4c.js"><link rel="prefetch" href="/studyBlog/assets/js/43.2f7a6bfc.js"><link rel="prefetch" href="/studyBlog/assets/js/44.34e1f6a1.js"><link rel="prefetch" href="/studyBlog/assets/js/45.dd6279cb.js"><link rel="prefetch" href="/studyBlog/assets/js/46.b794e7b5.js"><link rel="prefetch" href="/studyBlog/assets/js/47.25c698a2.js"><link rel="prefetch" href="/studyBlog/assets/js/48.1836d77a.js"><link rel="prefetch" href="/studyBlog/assets/js/49.85f76679.js"><link rel="prefetch" href="/studyBlog/assets/js/5.ad1abd79.js"><link rel="prefetch" href="/studyBlog/assets/js/50.b69d738a.js"><link rel="prefetch" href="/studyBlog/assets/js/51.43e52826.js"><link rel="prefetch" href="/studyBlog/assets/js/52.285a9387.js"><link rel="prefetch" href="/studyBlog/assets/js/53.ae1800ab.js"><link rel="prefetch" href="/studyBlog/assets/js/54.564168bd.js"><link rel="prefetch" href="/studyBlog/assets/js/55.80529f67.js"><link rel="prefetch" href="/studyBlog/assets/js/57.2b4b34bf.js"><link rel="prefetch" href="/studyBlog/assets/js/6.1ddabf23.js"><link rel="prefetch" href="/studyBlog/assets/js/7.0281837b.js"><link rel="prefetch" href="/studyBlog/assets/js/vendors~docsearch.aa014523.js">
+    <link rel="stylesheet" href="/studyBlog/assets/css/0.styles.2821be0a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/studyBlog/" class="home-link router-link-active"><img src="/studyBlog/logo.png" alt="YOYO-wan" class="logo"> <span class="site-name can-hide">YOYO-wan</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础知识" class="dropdown-title"><span class="title">前端基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础知识" class="mobile-dropdown-title"><span class="title">前端基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#HTML和CSS" class="nav-link">
+  HTML和CSS
+</a></li><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#javascript" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#前端工程化" class="nav-link">
+  前端工程化
+</a></li></ul></div></div><div class="nav-item"><a href="/studyBlog/vue3笔记/" class="nav-link">
+  vue3笔记
+</a></div><div class="nav-item"><a href="/studyBlog/工具用法/" class="nav-link">
+  工具用法
+</a></div><div class="nav-item"><a href="/studyBlog/面试/" class="nav-link">
+  面试
+</a></div> <a href="https://github.com/YOYO-wan" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础知识" class="dropdown-title"><span class="title">前端基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础知识" class="mobile-dropdown-title"><span class="title">前端基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#HTML和CSS" class="nav-link">
+  HTML和CSS
+</a></li><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#javascript" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#前端工程化" class="nav-link">
+  前端工程化
+</a></li></ul></div></div><div class="nav-item"><a href="/studyBlog/vue3笔记/" class="nav-link">
+  vue3笔记
+</a></div><div class="nav-item"><a href="/studyBlog/工具用法/" class="nav-link">
+  工具用法
+</a></div><div class="nav-item"><a href="/studyBlog/面试/" class="nav-link">
+  面试
+</a></div> <a href="https://github.com/YOYO-wan" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/studyBlog/%E9%9D%A2%E8%AF%95/" class="sidebar-link">面试</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>面试</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/studyBlog/html%E5%92%8Ccss%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/" class="sidebar-link">HTML和CSS相关面试题</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="content"><div style="width:100%"><div class="theme-default-content custom-content content__default"><h1 id="javascript相关面试题"><a href="#javascript相关面试题" class="header-anchor">#</a> JavaScript相关面试题</h1> <ol><li><p>介绍 JavaScript 的基本数据类型?</p></li> <li><p>浅谈 JavaScript 中变量和函数声明的提升?</p></li> <li><p>什么是闭包，闭包有什么特性？</p></li> <li><p>说说对闭包的理解和闭包的作用</p></li></ol> <h5 id="对于数组基本操作方法"><a href="#对于数组基本操作方法" class="header-anchor">#</a> 对于数组基本操作方法</h5> <p><code>let arr = [1,3,4,2,6]</code></p> <ol><li>获取数组长度<br> <code>arr.lenght</code></li> <li>在数组的最后一位添加元素<br> <code>arr.push(4)</code>，返回数组长度</li> <li>在数组的第一位添加元素<br> <code>arr.unshift(3)</code>，返回数组长度</li> <li>把数组的第一位元素弹出<br> <code>arr.shift()</code>,返回被弹出的元素</li> <li>把数组的最后一位元素弹出<br> <code>arr.pop()</code>,返回被弹出的元素</li> <li>原数组的第3位到第4位元素删除/增加/替换，原数组是否发生改变？<br>
+splice(开始位置,替换个数,替换内容),该方法改变原数组<br> <code>arr.splice(3,2)</code>,返回被删除的元素数组<br> <code>arr.splice(3,0,&quot;新增&quot;)</code>,返回空数组
+<code>arr.splice(3,2,6,7)</code>,返回替换元素的数组</li> <li>原数组不改变，提取数组从第2位到第4位的元素<br> <code>arr.slice(2,5)</code></li> <li>用字符“-”将数组中元素进行拼接<br> <code>arr.join('-')</code></li> <li>将arr与[&quot;11&quot;,&quot;22&quot;]进行拼接，不改变arr数组<br> <code>var newArr = arr.concat([&quot;11&quot;,&quot;22&quot;])</code></li> <li>将数组元素反转,是否改变原数组？<br> <code>arr.reverse()</code>,改变了原数组</li> <li>将数组元素从小到大排序，是否改变原数组？
+<code>arr.sort((v1,v2)=&gt;v1-v2)</code>,改变了原数组</li></ol> <h5 id="this是什么-this的指向规则-规则的优先级"><a href="#this是什么-this的指向规则-规则的优先级" class="header-anchor">#</a> this是什么？this的指向规则？规则的优先级？</h5> <p>this是函数作为方法被调用时所指向的对象<br>
+this的指向规则一:</p> <ol><li>默认绑定：独立调用函数</li> <li>隐式绑定：通过某个对象发起函数调用</li> <li>显式绑定：bind，apply，call方法，绑定this后调用函数</li> <li>new关键字调用函数</li></ol> <p>规则优先级为：
+new调用函数 &gt; bind &gt; apply/call &gt; 隐式绑定 &gt; 默认绑定</p> <h5 id="this指向面试题"><a href="#this指向面试题" class="header-anchor">#</a> this指向面试题</h5> <h5 id="apply-call-bind三种方法的区别"><a href="#apply-call-bind三种方法的区别" class="header-anchor">#</a> apply,call,bind三种方法的区别？</h5> <p>call(),apply()都可以直接调用函数,但该两种方法的第二个传参不同<br>
+call()的第二个参数以多参数的形式传递，apply()的第二个参数以数组的方式传递
+<code>foo.call(obj,18),foo.apply(obj,[18])</code><br>
+bind()方法执行后不调用函数，返回一个绑定了新this的函数<br>
+6. 事件模型的理解</p> <ol start="7"><li><p>new 操作符具体干了什么?</p></li> <li><p>说说栈和堆的理解，以及它们的区别?</p></li> <li><p>JS 数组和对象的遍历方式，以及几种方式的比较</p></li> <li><p>map 与 forEach 的区别</p></li> <li><p>谈一谈箭头函数与普通函数的区别?</p></li> <li><p>JavaScript 定义类的 4 种方法</p></li> <li><p>JavaScript 实现继承的 3 种方法</p></li> <li><p>对原生 Javascript 了解程度</p></li> <li><p>Js 动画与 CSS 动画区别及相应实现</p></li> <li><p>谈一谈你理解的函数式编程</p></li> <li><p>说说你对作用域链的理解</p></li> <li><p>JavaScript 原型，原型链 ? 有什么特点？</p></li> <li><p>说说什么是事件代理?</p></li> <li><p>说说 ajax 原理?</p></li> <li><p>说说如何解决跨域问题?</p></li> <li><p>异步加载 JS 的方式有哪些?</p></li> <li><p>那些操作会造成内存泄漏?</p></li> <li><p>介绍 JS 有哪些内置对象?</p></li> <li><p>说几条写 JavaScript 的基本规范</p></li> <li><p>eval 是做什么的?</p></li> <li><p>null 和 undefined 的区别</p></li> <li><p>说说同步和异步的区别?</p></li> <li><p>defer 和 async ?</p></li> <li><p>[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;].map(parseInt) 答案是多少?</p></li> <li><p>use strict 的理解和作用?</p></li> <li><p>说说严格模式的限制?</p></li> <li><p>说说严格模式的限制?</p></li> <li><p>说说 JSON 的了解?</p></li> <li><p>说说 JS 延迟加载的方式有哪些?</p></li> <li><p>说说 attribute 和 property 的区别是什么?</p></li> <li><p>说说 let 的区别是什么?</p></li> <li><p>如何通过 JS 判断一个数组?</p></li> <li><p>说说 let、var 、 const 的理解</p></li> <li><p>正则表达式的使用</p></li> <li><p>Javascript 中 callee 和 caller 的作用</p></li> <li><p>说说 window.onload 和$(document).ready 的区别?</p></li> <li><p>Javascript 数组去重方法汇总</p></li> <li><p>浏览器缓存</p></li> <li><p>防抖/节流的理解</p></li> <li><p>JavaScript 变量提升</p></li> <li><p>实现 Storage，使得该对象为单例，以及使用方式</p></li> <li><p>说说你对事件流的理解</p></li> <li><p>说说从输入 URL 到看到页面发生的全过程</p></li> <li><p>做一个 Dialog 组件，说说你设计的思路?它应该有什么功能?</p></li> <li><p>说说 ajax、fetch、axios 之间的区别</p></li> <li><p>说说内存泄漏</p></li> <li><p>JavaScript 自定义事件</p></li> <li><p>JavaScript 数组排序的几种方式?</p></li> <li><p>JavaScript 数组一行代码去重方法?</p></li> <li><p>JavaScript 如何判断一个对象是否为数组?</p></li> <li><p>script 引入方式?</p></li> <li><p>变量对象?</p></li> <li><p>babel 编译原理?</p></li> <li><p>数组(array)?</p></li> <li><p>说几条写 JavaScript 的基本规范?</p></li> <li><p>JavaScript 有几种类型的值?</p></li> <li><p>JavaScript 有几种类型的值?</p></li> <li><p>JavaScript 深浅拷贝?</p></li></ol></div> <footer class="page-edit" style="margin:0;"><!----> <div class="last-updated"><span class="prefix">最近更新:</span> <span class="time">9/22/2024, 7:12:57 PM</span></div></footer> <!----></div> <div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:86vh"><div style="font-weight:bold;">JavaScript相关面试题</div> <hr> <div class="toc-box"><!----></div></div></div></div></div>  <main class="footer"> <div class="copy-right"><span class="name"> 编程导航   |     </span> <a target="_blank" rel="noreferrer">
+          
+        </a></div></main></main> <aside class="page-sidebar"> <div class="page-side-toolbar"></div>  </aside></div><div class="global-ui"><!----></div></div>
+    <script src="/studyBlog/assets/js/app.19c0c77f.js" defer></script><script src="/studyBlog/assets/js/2.c08ae4f7.js" defer></script><script src="/studyBlog/assets/js/56.c55e9a54.js" defer></script>
+  </body>
+</html>
