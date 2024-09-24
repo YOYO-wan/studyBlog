@@ -5,6 +5,7 @@ export default [
         collapsable: false,
         children: [
             "HTML和CSS相关面试题.md",
+            "JavaScript相关面试题.md",
         ],
     }
   ];

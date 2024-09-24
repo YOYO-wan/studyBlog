@@ -83,3 +83,125 @@ new person("哈哈") // this指向person这个对象
 3. 执行person函数中的代码  
 4. 如果该函数没有返回值，会默认返回person对象
 所以`var foo = new person("哈哈")`,foo为person对象
+### 规则优先级
+1. 默认绑定优先级最低  
+2. 显式绑定高于隐式绑定  
+3. new绑定高于隐式绑定  
+4. new绑定高于bind
+
+结论：
+**new绑定 > bind() >apply()/call() > 隐式绑定 > 默认绑定**
+### this绑定之外的情况  
+**情况一：显式绑定中传入null或者undefined,this指向windows**
+```js
+function foo(){
+    console.log("this指向:",this)
+}
+foo.apply(null)      // this指向:windows
+foo.call(undefined)  // this指向:windows
+```
+严格模式下,this指向对应类型
+``` js
+"use strict"
+function foo(){
+    console.log("this指向:",this)
+}
+foo.apply(null)      // this指向:null
+foo.call(undefined)  // this指向:undefined
+```
+**情况二：间接函数引用,this指向windows**
+
+``` js
+var obj1 = {
+    name: "obj1",
+    foo: function(){
+        console.log("this指向：",this)
+    }
+};
+var obj2 = {
+    name: "obj2"
+};
+// 正常情况下
+// obj2.foo = obj1.foo
+// obj2.foo() // this指向obj2，这是隐式绑定
+
+// 特殊代码下
+(obj2.foo = obj1.foo)(); // this指向windows
+```
+赋值操作`obj2.foo = obj1.foo`返回一个foo函数  
+foo函数被独立调用，那么这就是默认绑定  
+**情况三：箭头函数**  
+箭头函数中并不绑定this，就算是强制绑定也不会生效  
+箭头函数中的this查找规则是向上层作用域查找this
+```js
+var obj = {
+    name: "obj",
+    foo: function(){
+        var bar = ()=>{
+            console.log("this指向：",this)
+        }
+        return bar
+    }
+}
+var obj2 = {
+    name: "obj2"
+}
+var fn = obj.foo()
+fn.apply(obj2) // this指向：obj
+```
+## 面试题
+**面试题一：**
+``` js
+var name = "windows"
+var person = {
+    name: "person",
+    sayName: function(){
+        console.log(this.name)
+    }
+}
+function sayName(){
+    var test = person.sayName;
+    test();                        // windows   独立调用，默认绑定
+    person.sayName();              // person    对象调用，隐式绑定
+    (person.sayName)();            // person    对象调用，隐式绑定
+    var b
+    (b = person.sayName)();        // windows   间接函数引用
+}
+sayName()
+```
+**面试题二：**
+``` js
+var name = "windows"
+var person1 = {
+    name: "person1",
+    foo1: function(){
+        console.log(this.name)
+    },
+    foo2:()=>{
+        console.log(this.name)
+    },
+    foo3:function(){
+        return function(){
+            console.log(this.name)
+        }
+    },
+    foo4:function(){
+        return ()=>{
+            console.log(this.name)
+        }
+    }
+}
+var person2 = { name: "person2" }
+
+person1.foo1();                     // person1  对象调用，隐式绑定  
+person1.foo1.call(person2);         // person2  显示绑定
+person1.foo2();                     // windows  箭头函数查找上层作用域
+person1.foo2.call(person2);         // windows  箭头函显式绑定无效
+person1.foo3()();                   // windows  独立执行，默认绑定
+person1.foo3.call(person2)();       // windows  独立调用，改变的是foo3函数的指向
+person1.foo3().call(person2);       // person2  显示绑定
+person1.foo4()();                   // person1  箭头函数查找上层作用域
+person1.foo4.call(person2)();       // person2  箭头函数查找上层作用域,然后显示绑定
+person1.foo4().call(person2);       // person1  箭头函显式绑定无效
+```
+**面试题三：**

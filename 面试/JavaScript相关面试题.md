@@ -1,39 +1,35 @@
 # JavaScript相关面试题
-1. 介绍 JavaScript 的基本数据类型?
 
-2. 浅谈 JavaScript 中变量和函数声明的提升?
-
-3. 什么是闭包，闭包有什么特性？
-
-4. 说说对闭包的理解和闭包的作用
-##### 对于数组基本操作方法  
+## 对于数组基本操作方法  
 `let arr = [1,3,4,2,6]` 
 1. 获取数组长度  
-`arr.lenght`  
 2. 在数组的最后一位添加元素  
-`arr.push(4)`，返回数组长度  
 3. 在数组的第一位添加元素  
-`arr.unshift(3)`，返回数组长度  
 4. 把数组的第一位元素弹出  
-`arr.shift()`,返回被弹出的元素  
 5. 把数组的最后一位元素弹出  
-`arr.pop()`,返回被弹出的元素  
 6. 原数组的第3位到第4位元素删除/增加/替换，原数组是否发生改变？  
-splice(开始位置,替换个数,替换内容),该方法改变原数组  
+7. 原数组不改变，提取数组从第2位到第4位的元素  
+8. 用字符“-”将数组中元素进行拼接  
+9. 将arr与["11","22"]进行拼接，不改变arr数组  
+10. 将数组元素反转,是否改变原数组？  
+11. 将数组元素从小到大排序，是否改变原数组？
+
+答案：
+1. `arr.lenght`  
+2. `arr.push(4)`，返回数组长度  
+3. `arr.unshift(3)`，返回数组长度  
+4. `arr.shift()`,返回被弹出的元素  
+5. `arr.pop()`,返回被弹出的元素  
+6. splice(开始位置,替换个数,替换内容),该方法改变原数组  
 `arr.splice(3,2)`,返回被删除的元素数组  
 `arr.splice(3,0,"新增")`,返回空数组
-`arr.splice(3,2,6,7)`,返回替换元素的数组
-7. 原数组不改变，提取数组从第2位到第4位的元素  
-`arr.slice(2,5)`  
-8. 用字符“-”将数组中元素进行拼接  
-`arr.join('-')`  
-9. 将arr与["11","22"]进行拼接，不改变arr数组  
-`var newArr = arr.concat(["11","22"])`
-10. 将数组元素反转,是否改变原数组？  
-`arr.reverse()`,改变了原数组
-11. 将数组元素从小到大排序，是否改变原数组？
-`arr.sort((v1,v2)=>v1-v2)`,改变了原数组
-##### this是什么？this的指向规则？规则的优先级？
+`arr.splice(3,2,6,7)`,返回替换元素的数组  
+7. `arr.slice(2,5)`  
+8. `arr.join('-')`  
+9. `var newArr = arr.concat(["11","22"])`
+10. `arr.reverse()`,改变了原数组
+11. `arr.sort((v1,v2)=>v1-v2)`,改变了原数组
+## this是什么？this的指向规则？规则的优先级？
 this是函数作为方法被调用时所指向的对象  
 this的指向规则一:
 1. 默认绑定：独立调用函数  
@@ -44,13 +40,79 @@ this的指向规则一:
 规则优先级为：
 new调用函数 > bind > apply/call > 隐式绑定 > 默认绑定
 
-##### this指向面试题
+this的指向规则之外的情况：
+1. 显式绑定中传入null或undefined,this指向windows(严格模式下指向null或者undefined)
+2. 间接函数引用,this指向windows
+3. 箭头函数中的this指向上层作用域，对箭头函数使用强制绑定不生效
 
-##### apply,call,bind三种方法的区别？
+## this指向面试题
+**面试题一**
+``` js
+var name = "windows"
+var person = {
+    name: "person",
+    sayName: function(){
+        console.log(this.name)
+    }
+}
+function sayName(){
+    var test = person.sayName;
+    test();                        
+    person.sayName();            
+    (person.sayName)();     
+    var b
+    (b = person.sayName)(); 
+}
+sayName()
+```
+**面试题二**
+``` js
+var name = "windows"
+var person1 = {
+    name: "person1",
+    foo1: function(){
+        console.log(this.name)
+    },
+    foo2:()=>{
+        console.log(this.name)
+    },
+    foo3:function(){
+        return function(){
+            console.log(this.name)
+        }
+    },
+    foo4:function(){
+        return ()=>{
+            console.log(this.name)
+        }
+    }
+}
+var person2 = { name: "person2" }
+
+person1.foo1();                    
+person1.foo1.call(person2);        
+person1.foo2();                     
+person1.foo2.call(person2);         
+person1.foo3()();                   
+person1.foo3.call(person2)();      
+person1.foo3().call(person2);     
+person1.foo4()();                  
+person1.foo4.call(person2)();     
+person1.foo4().call(person2);
+```
+## apply,call,bind三种方法的区别？
 call(),apply()都可以直接调用函数,但该两种方法的第二个传参不同  
 call()的第二个参数以多参数的形式传递，apply()的第二个参数以数组的方式传递 
 `foo.call(obj,18),foo.apply(obj,[18])`   
 bind()方法执行后不调用函数，返回一个绑定了新this的函数  
+## 剩余题目
+1. 介绍 JavaScript 的基本数据类型?
+
+2. 浅谈 JavaScript 中变量和函数声明的提升?
+
+3. 什么是闭包，闭包有什么特性？
+
+4. 说说对闭包的理解和闭包的作用
 6. 事件模型的理解
 
 7. new 操作符具体干了什么?
