@@ -6,9 +6,11 @@
 
 ## JavaScript
 
-[this的指向问题](JavaScript/this的指向问题.md)  
-
 [JavaScript模块开发](JavaScript/JavaScript模块开发.md)  
+
+[JS高级--this的指向问题](JavaScript/this的指向问题.md)  
+
+[JS高级--深入js面向对象](JavaScript/深入js面向对象.md)  
 
 ## TypeScript
 

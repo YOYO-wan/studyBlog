@@ -12,7 +12,8 @@ export default [
         collapsable: true,
         children: [
             "JavaScript/JavaScript模块开发.md",
-            "JavaScript/this的指向问题.md"
+            "JavaScript/this的指向问题.md",
+            "JavaScript/深入js面向对象.md"
         ],
     },
     {

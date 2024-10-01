@@ -44,9 +44,11 @@ permalink: /
 
 [HTML和CSS--less语法](/前端基础知识/HTML和CSS/学习less语法.md)  
 
-[JavaScript基础--测试](/前端基础知识/JavaScript/测试.md)  
+[JavaScript基础--JS模块开发](/前端基础知识/JavaScript/JavaScript模块开发.md)  
 
-[JavaScript基础--this的指向问题](/前端基础知识/JavaScript/this的指向问题.md)  
+[JavaScriptg高级--this的指向问题](/前端基础知识/JavaScript/this的指向问题.md)  
+
+[JavaScriptg高级--深入js面向对象](/前端基础知识/JavaScript/深入js面向对象.md)  
 
 ### 面试
 
