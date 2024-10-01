@@ -8,6 +8,7 @@ import interviewUsageSideBar from "./sidebars/interviewUsageSideBar";
 export default {
     "/前端基础知识/": ()=>import("./sidebars/basicKnowledgeSideBar"),
     "/vue3笔记/": ()=>import("./sidebars/frameVueSideBar"),
+    "/uniApp/": ()=>import("./sidebars/uniAppSideBar"),
     "/工具用法/": toolUsageSideBar,
     "/面试/": interviewUsageSideBar,
     // 降级，默认根据文章标题渲染侧边栏

@@ -205,3 +205,68 @@ person1.foo4.call(person2)();       // person2  箭头函数查找上层作用�
 person1.foo4().call(person2);       // person1  箭头函显式绑定无效
 ```
 **面试题三：**
+``` js
+var name = "windows"
+function Preson(name){
+    this.name = name;
+    this.foo1 = function(){
+        console.log(this.name)
+    }
+    this.foo2 = ()=>{ console.log(this.name) }
+    this.foo3 = function(){
+        return function(){
+            console.log(this.name)
+        }
+    }
+    this.foo4 = function (){
+        return ()=>{
+            console.log(this.name)
+        }
+    }
+}
+var preson1 = new Preson("preson1")
+var preson2 = new Preson("preson2")
+
+preson1.foo1();                  // preson1 隐式绑定
+preson1.foo1.call(preson2);      // preson2 显式绑定
+
+preson1.foo2();                  // preson1 箭头函数查找上层作用域
+preson1.foo2.call(preson2);      // preson1 箭头函数强制绑定不生效
+
+preson1.foo3()();                // windows 独立调用
+preson1.foo3.call(preson2)();    // windows 独立调用
+preson1.foo3().call(preson2);    // preson2 显示绑定
+
+preson1.foo4()();                // preson1 箭头函数查找上层作用域
+preson1.foo4.call(preson2)();    // preson2 显式绑定,箭头函数查找上层作用域
+preson1.foo4().call(preson2);    // preson1 箭头函数强制绑定不生效
+```
+**面试题四：**
+```js
+var name = "windows"
+function Preson(name){
+    this.name = name;
+    this.obj = {
+        name: "obj",
+        foo1: function(){
+            return function(){
+                console.log(this.name)
+            }
+        },
+        foo2: function(){
+            return () => {
+                console.log(this.name)
+            }
+        }
+    }
+}
+var preson1 = new Preson("preson1");
+var preson2 = new Preson("preson2");
+
+preson1.obj.foo1()();                // windows 独立调用 
+preson1.obj.foo1.call(preson2)();    // windows 独立调用 
+preson1.obj.foo1().call(preson2);    // preson2 显式绑定
+preson1.obj.foo2()();                // obj  箭头函数查找上层作用域
+preson1.obj.foo2.call(preson2)();    // preson2 显式绑定,箭头函数查找上层作用域
+preson1.obj.foo2().call(preson2);    // obj  箭头函数强制绑定不生效
+```

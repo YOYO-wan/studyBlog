@@ -12,14 +12,20 @@ export default [
                 text: "JavaScript", link: "/前端基础知识/#javascript",
             },
             {
+                text: "TypeScript", link: "/前端基础知识/#TypeScript",
+            },
+            {
                 text: "前端工程化", link: "/前端基础知识/#前端工程化",
             },
-            
         ]
     },
     {
         text: "vue3笔记",
         link: '/vue3笔记/'
+    },
+    {
+        text: "uniApp",
+        link: '/uniApp/'
     },
     {
         text: "工具用法",

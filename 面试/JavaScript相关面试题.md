@@ -29,6 +29,7 @@
 9. `var newArr = arr.concat(["11","22"])`
 10. `arr.reverse()`,改变了原数组
 11. `arr.sort((v1,v2)=>v1-v2)`,改变了原数组
+
 ## this是什么？this的指向规则？规则的优先级？
 this是函数作为方法被调用时所指向的对象  
 this的指向规则一:
@@ -100,11 +101,86 @@ person1.foo4()();
 person1.foo4.call(person2)();     
 person1.foo4().call(person2);
 ```
+**面试题三：**
+``` js
+var name = "windows"
+function Preson(name){
+    this.name = name;
+    this.foo1 = function(){
+        console.log(this.name)
+    }
+    this.foo2 = ()=>{ console.log(this.name) }
+    this.foo3 = function(){
+        return function(){
+            console.log(this.name)
+        }
+    }
+    this.foo4 = function (){
+        return ()=>{
+            console.log(this.name)
+        }
+    }
+}
+var preson1 = new Preson("preson1")
+var preson2 = new Preson("preson2")
+
+preson1.foo1();
+preson1.foo1.call(preson2);
+
+preson1.foo2();
+preson1.foo2.call(preson2);
+
+preson1.foo3()();
+preson1.foo3.call(preson2)();
+preson1.foo3().call(preson2);
+
+preson1.foo4()();
+preson1.foo4.call(preson2)();
+preson1.foo4().call(preson2);
+```
+**面试题四：**
+```js
+var name = "windows"
+function Preson(name){
+    this.name = name;
+    this.obj = {
+        name: "obj",
+        foo1: function(){
+            return function(){
+                console.log(this.name)
+            }
+        },
+        foo2: function(){
+            return () => {
+                console.log(this.name)
+            }
+        }
+    }
+}
+var preson1 = new Preson("preson1");
+var preson2 = new Preson("preson2");
+
+preson1.obj.foo1()();  
+preson1.obj.foo1.call(preson2)(); 
+preson1.obj.foo1().call(preson2); 
+preson1.obj.foo2()();                
+preson1.obj.foo2.call(preson2)();    
+preson1.obj.foo2().call(preson2);  
+```
+
 ## apply,call,bind三种方法的区别？
 call(),apply()都可以直接调用函数,但该两种方法的第二个传参不同  
 call()的第二个参数以多参数的形式传递，apply()的第二个参数以数组的方式传递 
 `foo.call(obj,18),foo.apply(obj,[18])`   
 bind()方法执行后不调用函数，返回一个绑定了新this的函数  
+
+## new 操作符具体干了什么?
+new操作符用于给一个构造函数创建实例对象  
+1. 创建一个空对象  
+2. 将构造函数的this绑定到这个空对象上  
+3. 执行构造函数中的代码  
+4. 如果构造函数没有返回值，将默认返回创建的对象  
+
 ## 剩余题目
 1. 介绍 JavaScript 的基本数据类型?
 

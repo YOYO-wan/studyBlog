@@ -8,5 +8,5 @@ export default [
             "JavaScript相关面试题.md",
         ],
     }
-  ];
+];
   
