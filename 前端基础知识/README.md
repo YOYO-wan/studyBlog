@@ -12,6 +12,8 @@
 
 [JS高级--深入js面向对象](JavaScript/深入js面向对象.md)  
 
+[JS高级--原型和原型链](JavaScript/原型和原型链.md) 
+
 ## TypeScript
 
 [TypeScript基础语法](TypeScript/TypeScript基础语法.md)  

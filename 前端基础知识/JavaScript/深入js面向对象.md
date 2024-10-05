@@ -148,3 +148,57 @@ var obj = {
     }
 }
 ```
+## 创建对象的多种方式
+### 字面量创建对象
+``` js
+var obj = {
+    name: "hahah ",
+    age: 19
+}
+```
+### 工厂函数创建对象
+``` js
+function createPerson(name,age){
+    var p = {}
+    p.name = name
+    p.age = age
+    p.running = function(){
+        console.log("在奔跑")
+    }
+    return p
+}
+var p1 = createPerson("哈哈"，19)
+var p2 = createPerson("呵呵"，21)
+```
+### 构造函数创建对象
+构造函数：通过new调用的函数都可以称为构造函数
+``` js
+function Person(name,age){
+    this.name = name
+    this.age = age
+    this.running = function(){
+        console.log("在奔跑")
+    }
+}
+var p1 = new Person("哈哈"，19)
+var p2 = new Person("呵呵"，21)
+```
+#### new操作符的作用
+1. 在内存中创建一个新对象  
+2. 新对象的__proto__属性会被赋值为构造函数的prototype属性  
+3. 构造函数内部的this指向新创建出来的对象  
+4. 执行构造函数内部代码  
+5. 构造函数没有返回值的话，默认返回新对象  
+
+#### 构造函数结合原型进行优化
+``` js
+function Person(name,age){
+    this.name = name
+    this.age = age
+    Person.property.running = function(){
+        console.log(this.name +"在奔跑")
+    }
+}
+var p1 = new Person("哈哈"，19)
+var p2 = new Person("呵呵"，21)
+```
