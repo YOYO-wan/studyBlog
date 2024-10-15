@@ -14,7 +14,8 @@ export default [
             "JavaScript/JavaScript模块开发.md",
             "JavaScript/this的指向问题.md",
             "JavaScript/深入js面向对象.md",
-            "JavaScript/原型和原型链.md"
+            "JavaScript/原型和原型链.md",
+            "JavaScript/ES6--类的使用.md",
         ],
     },
     {
@@ -30,6 +31,7 @@ export default [
         children: [
             "前端工程化/npm包管理工具.md",
             "前端工程化/webpack基础知识.md",
+            "前端工程化/跨域.md",
         ],
     },
     

@@ -12,7 +12,9 @@
 
 [JS高级--深入js面向对象](JavaScript/深入js面向对象.md)  
 
-[JS高级--原型和原型链](JavaScript/原型和原型链.md) 
+[JS高级--原型和原型链](JavaScript/原型和原型链.md)  
+
+[JS高级--ES6类的使用](JavaScript/ES6--类的使用.md)  
 
 ## TypeScript
 
@@ -21,6 +23,8 @@
 ## 前端工程化
 
 [webpack基础知识](前端工程化/webpack基础知识.md)  
+
+[跨域](前端工程化/跨域.md) 
 
 [npm包管理工具](前端工程化/npm包管理工具.md)  
 
