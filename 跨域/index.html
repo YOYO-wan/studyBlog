@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>跨域 | YOYO-wan</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/studyBlog/favicon.ico">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?2675818a983a3131404cee835018f016";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    <meta name="description" content="YOYO-wan的文档">
+    <meta property="article:modified_time" content="2024-10-15T18:11:22.000Z">
+    <meta property="og:site_name" content="YOYO-wan">
+    <meta property="og:title" content="跨域">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://codefather.cn/%E8%B7%A8%E5%9F%9F/">
+    <meta name="twitter:title" content="跨域">
+    <meta name="twitter:url" content="https://codefather.cn/%E8%B7%A8%E5%9F%9F/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="程序员, 编程, 前端工程师">
+    <meta property="article:tag" content="程序员">
+    <meta name="keywords" content="YOYO-wan, 前端开发, 学习笔记">
+    
+    <link rel="preload" href="/studyBlog/assets/css/0.styles.2821be0a.css" as="style"><link rel="preload" href="/studyBlog/assets/js/app.2e224b21.js" as="script"><link rel="preload" href="/studyBlog/assets/js/2.2b23ffe0.js" as="script"><link rel="preload" href="/studyBlog/assets/js/29.0ac4e512.js" as="script"><link rel="prefetch" href="/studyBlog/assets/js/1.492a093e.js"><link rel="prefetch" href="/studyBlog/assets/js/10.99b3457d.js"><link rel="prefetch" href="/studyBlog/assets/js/11.1ad6f0da.js"><link rel="prefetch" href="/studyBlog/assets/js/12.0969a4de.js"><link rel="prefetch" href="/studyBlog/assets/js/13.fd084e8b.js"><link rel="prefetch" href="/studyBlog/assets/js/14.df4e752f.js"><link rel="prefetch" href="/studyBlog/assets/js/15.57b6596f.js"><link rel="prefetch" href="/studyBlog/assets/js/16.f00d61ae.js"><link rel="prefetch" href="/studyBlog/assets/js/17.71da7724.js"><link rel="prefetch" href="/studyBlog/assets/js/18.9bb0c36b.js"><link rel="prefetch" href="/studyBlog/assets/js/19.528189b2.js"><link rel="prefetch" href="/studyBlog/assets/js/20.e934be12.js"><link rel="prefetch" href="/studyBlog/assets/js/21.3cadab97.js"><link rel="prefetch" href="/studyBlog/assets/js/22.cae44f5b.js"><link rel="prefetch" href="/studyBlog/assets/js/23.5145b9b7.js"><link rel="prefetch" href="/studyBlog/assets/js/24.828ddb3f.js"><link rel="prefetch" href="/studyBlog/assets/js/25.538edc80.js"><link rel="prefetch" href="/studyBlog/assets/js/26.3bb4e06b.js"><link rel="prefetch" href="/studyBlog/assets/js/27.3b63c329.js"><link rel="prefetch" href="/studyBlog/assets/js/28.7060d48e.js"><link rel="prefetch" href="/studyBlog/assets/js/3.afcc94e2.js"><link rel="prefetch" href="/studyBlog/assets/js/30.a58273cf.js"><link rel="prefetch" href="/studyBlog/assets/js/31.d221d72c.js"><link rel="prefetch" href="/studyBlog/assets/js/32.f4a63119.js"><link rel="prefetch" href="/studyBlog/assets/js/33.3c6eb8ee.js"><link rel="prefetch" href="/studyBlog/assets/js/34.e59ab84d.js"><link rel="prefetch" href="/studyBlog/assets/js/35.766a69f1.js"><link rel="prefetch" href="/studyBlog/assets/js/36.a7c61d9b.js"><link rel="prefetch" href="/studyBlog/assets/js/37.17d7f8fe.js"><link rel="prefetch" href="/studyBlog/assets/js/38.8bf65281.js"><link rel="prefetch" href="/studyBlog/assets/js/39.c526d5c4.js"><link rel="prefetch" href="/studyBlog/assets/js/4.70178799.js"><link rel="prefetch" href="/studyBlog/assets/js/40.f9730a3e.js"><link rel="prefetch" href="/studyBlog/assets/js/41.6126d9be.js"><link rel="prefetch" href="/studyBlog/assets/js/42.4316fc13.js"><link rel="prefetch" href="/studyBlog/assets/js/43.4713a580.js"><link rel="prefetch" href="/studyBlog/assets/js/44.6ca701cd.js"><link rel="prefetch" href="/studyBlog/assets/js/45.48b1a92b.js"><link rel="prefetch" href="/studyBlog/assets/js/46.e9576990.js"><link rel="prefetch" href="/studyBlog/assets/js/47.15847061.js"><link rel="prefetch" href="/studyBlog/assets/js/48.bc0155a4.js"><link rel="prefetch" href="/studyBlog/assets/js/49.78d08d69.js"><link rel="prefetch" href="/studyBlog/assets/js/5.ef1322e4.js"><link rel="prefetch" href="/studyBlog/assets/js/50.1569e221.js"><link rel="prefetch" href="/studyBlog/assets/js/51.d5012973.js"><link rel="prefetch" href="/studyBlog/assets/js/52.5be345bf.js"><link rel="prefetch" href="/studyBlog/assets/js/53.1f08bc03.js"><link rel="prefetch" href="/studyBlog/assets/js/54.0f83a347.js"><link rel="prefetch" href="/studyBlog/assets/js/55.24911d5f.js"><link rel="prefetch" href="/studyBlog/assets/js/56.6ce85511.js"><link rel="prefetch" href="/studyBlog/assets/js/57.7d7f4203.js"><link rel="prefetch" href="/studyBlog/assets/js/58.4da70e13.js"><link rel="prefetch" href="/studyBlog/assets/js/59.64cbb2b9.js"><link rel="prefetch" href="/studyBlog/assets/js/6.17c8b5d5.js"><link rel="prefetch" href="/studyBlog/assets/js/60.050df545.js"><link rel="prefetch" href="/studyBlog/assets/js/61.18ea36e7.js"><link rel="prefetch" href="/studyBlog/assets/js/62.cdc1b9e3.js"><link rel="prefetch" href="/studyBlog/assets/js/63.0cab0229.js"><link rel="prefetch" href="/studyBlog/assets/js/64.4c78032c.js"><link rel="prefetch" href="/studyBlog/assets/js/65.1c370040.js"><link rel="prefetch" href="/studyBlog/assets/js/7.76bcdfe2.js"><link rel="prefetch" href="/studyBlog/assets/js/vendors~docsearch.657e42b7.js">
+    <link rel="stylesheet" href="/studyBlog/assets/css/0.styles.2821be0a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/studyBlog/" class="home-link router-link-active"><img src="/studyBlog/logo.png" alt="YOYO-wan" class="logo"> <span class="site-name can-hide">YOYO-wan</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础知识" class="dropdown-title"><span class="title">前端基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础知识" class="mobile-dropdown-title"><span class="title">前端基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#HTML和CSS" class="nav-link">
+  HTML和CSS
+</a></li><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#javascript" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#TypeScript" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#前端工程化" class="nav-link">
+  前端工程化
+</a></li></ul></div></div><div class="nav-item"><a href="/studyBlog/vue3笔记/" class="nav-link">
+  vue3笔记
+</a></div><div class="nav-item"><a href="/studyBlog/uniApp/" class="nav-link">
+  uniApp
+</a></div><div class="nav-item"><a href="/studyBlog/工具用法/" class="nav-link">
+  工具用法
+</a></div><div class="nav-item"><a href="/studyBlog/面试/" class="nav-link">
+  面试
+</a></div> <a href="https://github.com/YOYO-wan" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础知识" class="dropdown-title"><span class="title">前端基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础知识" class="mobile-dropdown-title"><span class="title">前端基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#HTML和CSS" class="nav-link">
+  HTML和CSS
+</a></li><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#javascript" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#TypeScript" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/studyBlog/前端基础知识/#前端工程化" class="nav-link">
+  前端工程化
+</a></li></ul></div></div><div class="nav-item"><a href="/studyBlog/vue3笔记/" class="nav-link">
+  vue3笔记
+</a></div><div class="nav-item"><a href="/studyBlog/uniApp/" class="nav-link">
+  uniApp
+</a></div><div class="nav-item"><a href="/studyBlog/工具用法/" class="nav-link">
+  工具用法
+</a></div><div class="nav-item"><a href="/studyBlog/面试/" class="nav-link">
+  面试
+</a></div> <a href="https://github.com/YOYO-wan" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>跨域</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#什么是跨域" class="sidebar-link">什么是跨域？</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#同源策略" class="sidebar-link">同源策略</a></li><li class="sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#什么样的url称之为同源" class="sidebar-link">什么样的URL称之为同源</a></li><li class="sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#跨域的产生" class="sidebar-link">跨域的产生</a></li></ul></li><li><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#解决跨域的常见方案" class="sidebar-link">解决跨域的常见方案</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#部署在相同服务器中" class="sidebar-link">部署在相同服务器中</a></li><li class="sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#cors跨域资源共享" class="sidebar-link">CORS跨域资源共享</a></li><li class="sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#node代理服务器" class="sidebar-link">node代理服务器</a></li><li class="sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#nginx反向代理" class="sidebar-link">Nginx反向代理</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="content"><div style="width:100%"><div class="theme-default-content custom-content content__default"><h1 id="跨域"><a href="#跨域" class="header-anchor">#</a> 跨域</h1> <h2 id="什么是跨域"><a href="#什么是跨域" class="header-anchor">#</a> 什么是跨域？</h2> <h3 id="同源策略"><a href="#同源策略" class="header-anchor">#</a> 同源策略</h3> <p>它是一个重要的安全策略，它用于限制一个源的文档或它加载的脚本，如何能与另一个源的资源交互，它能阻隔恶意文档，减少可能被攻击的媒介。</p> <h3 id="什么样的url称之为同源"><a href="#什么样的url称之为同源" class="header-anchor">#</a> 什么样的URL称之为同源</h3> <p>URL中协议，主机，端口号，都相同的称之为同源<br>
+例如：<br> <code>http://www.test.com:9090</code>和<code>http://www.test.com:9091</code>,端口号不同，所以不同源<br> <code>https://www.test.com:9090</code>和<code>http://www.test.com:9090</code>,协议不同，所以不同源</p> <h3 id="跨域的产生"><a href="#跨域的产生" class="header-anchor">#</a> 跨域的产生</h3> <p>因为随着前后端分离的发展，前端开发的代码和服务器开发的API接口往往是分离的，甚至部署在不同的服务器上。<br>
+当浏览器发现静态资源和API接口请求不是来自于同一个地方时，就会因为同源策略产生了跨域。</p> <h2 id="解决跨域的常见方案"><a href="#解决跨域的常见方案" class="header-anchor">#</a> 解决跨域的常见方案</h2> <h3 id="部署在相同服务器中"><a href="#部署在相同服务器中" class="header-anchor">#</a> 部署在相同服务器中</h3> <p>将静态资源和API服务器部署在同一个服务器中</p> <h3 id="cors跨域资源共享"><a href="#cors跨域资源共享" class="header-anchor">#</a> CORS跨域资源共享</h3> <p>跨域资源共享(CORS)，它是一种基于http header的机制。<br>
+该机制通过允许<strong>服务器标示</strong>除了它自己以外的其他源(域,协议,端口号)<br>
+使浏览器允许<strong>已标记出来的源</strong>访问，加载自己的资源<br> <strong>浏览器将CORS请求分为两类：简单请求和非简单请求</strong><br>
+满足以下两大条件，就属于简单请求(不满足的就属于非简单请求)</p> <ol><li>请求方法是以下三种之一：HEAD,GET,POST</li> <li>HTTP头部信息不超出以下字段
+ Accept
+ Accept-Language
+ Content-Language
+ Last-Event-ID
+ Content-Type：只限于三个值 application/x-www-form-urlencoded、multipart/form-data、text/plain</li></ol> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 对于简单请求的解决代码</span>
+<span class="token comment">// 服务器中间件</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    ctx<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">&quot;Access-Control-Allow-Origin&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;http://127.0.0.1:5500&quot;</span><span class="token punctuation">)</span>
+    <span class="token comment">// 只允许127.0.0.1:5500访问  </span>
+    <span class="token comment">// 或</span>
+    ctx<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">&quot;Access-Control-Allow-Origin&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span>
+    <span class="token comment">// 允许所有地址访问  </span>
+    <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 对于非简单请求的解决代码</span>
+<span class="token comment">// 服务器中间件</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    ctx<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">&quot;Access-Control-Allow-Origin&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span>
+    ctx<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">&quot;Access-Control-Allow-Hesders&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;Accept,Accept-Encoding,Accept-Language,Connection,Content-Length,Content-Type,Host,Origin,Referer,User-Agent&quot;</span><span class="token punctuation">)</span>
+    <span class="token comment">// 除了简单Header的信息，额外允许哪些头部字段  </span>
+    ctx<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">&quot;Access-Control-Allow-Credentials&quot;</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token comment">// 允许携带凭证(cookie)</span>
+    ctx<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">&quot;Access-Control-Allow-Methods&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;PUT,POST,GET,PATCH,DELETE,OPTIONS&quot;</span><span class="token punctuation">)</span>
+    <span class="token comment">// 发送的请求都允许那些方式</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">&quot;OPTIONS&quot;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token number">204</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h3 id="node代理服务器"><a href="#node代理服务器" class="header-anchor">#</a> node代理服务器</h3> <p>Node代理服务器是平时开发中前端配置最多的一种方案<br> <img alt="node代理服务器图解" data-src="/studyBlog/assets/img/nodeProxy.fee6442f.png" loading="lazy" class="lazy"><br>
+一般在开发中，使用webpack中devServer的proxy配置 ，这样前端项目和node代理服务器为同一个服务器了，所以就没有了跨域的问题</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> target <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">'10.120.1.120:9090'</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> proxy <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> target<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> pathRewrite <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    pathRewrite<span class="token punctuation">[</span><span class="token string">'^/'</span> <span class="token operator">+</span> target<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'/law/'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'/law/'</span><span class="token punctuation">;</span>
+    proxy<span class="token punctuation">[</span><span class="token string">'/'</span> <span class="token operator">+</span> target<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">timeout</span><span class="token operator">:</span> <span class="token number">1920000</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'http://'</span> <span class="token operator">+</span> target<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// target表示代理的服务器url</span>
+        pathRewrite
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// proxy = {</span>
+<span class="token comment">//     '/10.120.1.120:9090': {</span>
+<span class="token comment">//     timeout: 1920000,</span>
+<span class="token comment">//     target: 'http://10.120.1.120:9090',</span>
+<span class="token comment">//     pathRewrite: { '^/10.120.1.120:9090/law/': '' }</span>
+<span class="token comment">//   }</span>
+<span class="token comment">// }</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  <span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    proxy
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h3 id="nginx反向代理"><a href="#nginx反向代理" class="header-anchor">#</a> Nginx反向代理</h3> <p><img alt="nginx配置" data-src="/studyBlog/assets/img/nginxSeting.672ba1de.png" loading="lazy" class="lazy"></p></div> <footer class="page-edit" style="margin:0;"><!----> <div class="last-updated"><span class="prefix">最近更新:</span> <span class="time">10/15/2024, 6:11:22 PM</span></div></footer> <!----></div> <div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:86vh"><div style="font-weight:bold;">跨域</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#什么是跨域" class="toc-sidebar-link">什么是跨域？</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#同源策略" class="toc-sidebar-link">同源策略</a></li><li class="toc-sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#什么样的url称之为同源" class="toc-sidebar-link">什么样的URL称之为同源</a></li><li class="toc-sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#跨域的产生" class="toc-sidebar-link">跨域的产生</a></li></ul></li><li><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#解决跨域的常见方案" class="toc-sidebar-link">解决跨域的常见方案</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#部署在相同服务器中" class="toc-sidebar-link">部署在相同服务器中</a></li><li class="toc-sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#cors跨域资源共享" class="toc-sidebar-link">CORS跨域资源共享</a></li><li class="toc-sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#node代理服务器" class="toc-sidebar-link">node代理服务器</a></li><li class="toc-sidebar-sub-header"><a href="/studyBlog/%E8%B7%A8%E5%9F%9F/#nginx反向代理" class="toc-sidebar-link">Nginx反向代理</a></li></ul></li></ul></div></div></div></div></div>  <main class="footer"> <div class="copy-right"><span class="name"> 编程导航   |     </span> <a target="_blank" rel="noreferrer">
+          
+        </a></div></main></main> <aside class="page-sidebar"> <div class="page-side-toolbar"></div>  </aside></div><div class="global-ui"><!----></div></div>
+    <script src="/studyBlog/assets/js/app.2e224b21.js" defer></script><script src="/studyBlog/assets/js/2.2b23ffe0.js" defer></script><script src="/studyBlog/assets/js/29.0ac4e512.js" defer></script>
+  </body>
+</html>
